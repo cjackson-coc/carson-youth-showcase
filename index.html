@@ -42,7 +42,7 @@
 </div>
 <div id="viewer" class="hidden flex-1 flex-col"><iframe id="frame" title="student site"></iframe></div>
 <script>
-const STUDENTS = [{"name": "Maximus Roman", "brand": "#134E4A", "accent": "#0D9488", "tag": "Aspiring game developer, obsessed with programming.", "url": "https://mxrom08.github.io/resume-site/template/index.html", "ready": true}, {"name": "Marquise McGee", "brand": "#0C2559", "accent": "#2C62CC", "tag": "Computer Science student, focused on networking.", "url": "https://quise27.github.io/resume-site/template/index.html", "ready": true}, {"name": "Ayden Fronda", "brand": "#7C2D12", "accent": "#EA580C", "tag": "Basketball, and I love working with kids.", "url": "https://ayden12710.github.io/resume-site/template/layouts/fun.html", "ready": true}, {"name": "John Lim", "brand": "#4C1D95", "accent": "#7C3AED", "tag": "Building my corner of the internet.", "url": "https://jtl4hunnid.github.io/resume-site/template/indexbunz.html", "ready": true}, {"name": "Valerie Lopez", "brand": "#831843", "accent": "#DB2777", "tag": "14, and this is my first year building websites.", "url": "", "ready": false}, {"name": "Laurice Hizon", "brand": "#0C4A6E", "accent": "#0284C7", "tag": "Site coming soon.", "url": "", "ready": false}];
+const STUDENTS = [{"name": "Maximus Roman", "brand": "#134E4A", "accent": "#0D9488", "tag": "Aspiring game developer, obsessed with programming.", "url": "https://mxrom08.github.io/resume-site/template/index.html", "ready": true}, {"name": "Marquise McGee", "brand": "#0C2559", "accent": "#2C62CC", "tag": "Computer Science student, focused on networking.", "url": "https://quise27.github.io/resume-site/template/index.html", "ready": true}, {"name": "Ayden Fronda", "brand": "#7C2D12", "accent": "#EA580C", "tag": "Basketball, and I love working with kids.", "url": "https://ayden12710.github.io/resume-site/template/layouts/fun.html", "ready": true}, {"name": "John Lim", "brand": "#4C1D95", "accent": "#7C3AED", "tag": "Building my corner of the internet.", "url": "https://jtl4hunnid.github.io/resume-site/template/indexbunz.html", "ready": true}, {"name": "Valerie Lopez", "brand": "#831843", "accent": "#DB2777", "tag": "14, and this is my first year building websites.", "url": "", "ready": false}, {"name": "Laurice Hizon", "brand": "#0C4A6E", "accent": "#0284C7", "tag": "Sophomore and Summer Youth Worker at Carson.", "url": "https://angelsagonize.github.io/resume-site/template/index.html", "ready": true}];
 const initials = n => n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
 document.getElementById('navlinks').innerHTML = STUDENTS.map(function(s,i){
  return s.ready
@@ -68,16 +68,6 @@ document.getElementById('cards').innerHTML = STUDENTS.map(function(s,i){
 }).join('');
 function toggleMenu(){document.getElementById('mobilemenu').classList.toggle('hidden');}
 function closeMenu(){document.getElementById('mobilemenu').classList.add('hidden');}
-function showStudent(i){
-  var s=STUDENTS[i];
-  document.getElementById('frame').src=s.url;
-  document.getElementById('hub').classList.add('hidden');
-  document.getElementById('viewer').classList.remove('hidden'); document.getElementById('viewer').classList.add('flex');
-  document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',+b.dataset.i===i));
-}
-function showHome(){
-  document.getElementById('viewer').classList.add('hidden'); document.getElementById('viewer').classList.remove('flex');
-  document.getElementById('hub').classList.remove('hidden');
-  document.querySelectorAll('.navbtn').forEach(b=>b.classList.remove('active'));
-}
+function showStudent(i){var s=STUDENTS[i];document.getElementById('frame').src=s.url;document.getElementById('hub').classList.add('hidden');document.getElementById('viewer').classList.remove('hidden');document.getElementById('viewer').classList.add('flex');document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',+b.dataset.i===i));}
+function showHome(){document.getElementById('viewer').classList.add('hidden');document.getElementById('viewer').classList.remove('flex');document.getElementById('hub').classList.remove('hidden');document.querySelectorAll('.navbtn').forEach(b=>b.classList.remove('active'));}
 </script></body></html>
