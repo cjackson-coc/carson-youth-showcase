@@ -9,7 +9,7 @@
   .navbtn.active{background:rgba(255,255,255,.15);color:#fff}
   @media print{
     *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-    #viewer,#mobilemenu,#hamburger{display:none!important}#hub{display:block!important}
+    #viewer,#mobilemenu,#hamburger,#backbtn{display:none!important}#hub{display:block!important}
     #navlinks{display:flex!important}
     body{background:#fff!important;color:#0f172a!important;height:auto!important}
     nav{position:static!important;background:#fff!important;border-color:#e2e8f0!important}
@@ -23,6 +23,7 @@
 <body class="flex h-full flex-col bg-slate-900 font-sans text-white">
 <nav class="z-40 shrink-0 border-b border-white/10 bg-slate-900/95 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center px-4 py-2.5">
+    <button id="backbtn" onclick="showHome()" class="mr-3 hidden items-center gap-1.5 rounded-lg bg-amber-400 px-3 py-1.5 text-sm font-bold text-slate-900 transition hover:bg-amber-300">&larr; Showcase home</button>
     <button onclick="showHome()" class="font-extrabold tracking-tight">Carson&nbsp;<span class="text-amber-400">Youth&nbsp;Web</span></button>
     <div id="navlinks" class="ml-auto hidden flex-wrap items-center gap-1 md:flex"></div>
     <button id="hamburger" onclick="toggleMenu()" aria-label="Menu" class="ml-auto rounded-lg p-2 text-white/80 transition hover:bg-white/10 md:hidden">
@@ -68,6 +69,7 @@ document.getElementById('cards').innerHTML = STUDENTS.map(function(s,i){
 }).join('');
 function toggleMenu(){document.getElementById('mobilemenu').classList.toggle('hidden');}
 function closeMenu(){document.getElementById('mobilemenu').classList.add('hidden');}
-function showStudent(i){var s=STUDENTS[i];document.getElementById('frame').src=s.url;document.getElementById('hub').classList.add('hidden');document.getElementById('viewer').classList.remove('hidden');document.getElementById('viewer').classList.add('flex');document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',+b.dataset.i===i));}
-function showHome(){document.getElementById('viewer').classList.add('hidden');document.getElementById('viewer').classList.remove('flex');document.getElementById('hub').classList.remove('hidden');document.querySelectorAll('.navbtn').forEach(b=>b.classList.remove('active'));}
+var backbtn=document.getElementById('backbtn');
+function showStudent(i){var s=STUDENTS[i];document.getElementById('frame').src=s.url;document.getElementById('hub').classList.add('hidden');document.getElementById('viewer').classList.remove('hidden');document.getElementById('viewer').classList.add('flex');backbtn.classList.remove('hidden');backbtn.classList.add('flex');document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',+b.dataset.i===i));}
+function showHome(){document.getElementById('viewer').classList.add('hidden');document.getElementById('viewer').classList.remove('flex');document.getElementById('hub').classList.remove('hidden');backbtn.classList.add('hidden');backbtn.classList.remove('flex');document.querySelectorAll('.navbtn').forEach(b=>b.classList.remove('active'));}
 </script></body></html>
