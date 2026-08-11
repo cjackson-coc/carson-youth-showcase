@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Summer Youth Web Program 2026 — City of Carson</title>
-<meta name="description" content="Six students, six real websites — built from scratch this summer with the City of Carson's Information Technology and Security Department.">
+<title>Summer Youth Web Program 2026 | City of Carson</title>
+<meta name="description" content="Six students in the City of Carson Summer Youth Program each designed, built, and published a personal website from the ground up. Presented by the Information Technology and Security Department.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cjackson-coc.github.io/carson-youth-showcase/">
-<meta property="og:title" content="Summer Youth Web Program 2026 — City of Carson">
-<meta property="og:description" content="Six students, six real websites — built from scratch this summer.">
+<meta property="og:title" content="Summer Youth Web Program 2026 | City of Carson">
+<meta property="og:description" content="Six students each designed, built, and published a personal website from the ground up in one summer.">
 <meta property="og:image" content="https://cjackson-coc.github.io/carson-youth-showcase/group-photo.jpg">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="576">
@@ -47,7 +47,7 @@
     <img src="group-photo.jpg" alt="Carson Summer Youth Program group photo" class="mx-auto mb-7 w-full max-w-3xl rounded-2xl ring-1 ring-white/20">
     <p class="text-xs font-bold uppercase tracking-[0.35em] text-amber-400">City of Carson</p>
     <h1 id="hero-title" class="mt-2 text-4xl font-extrabold sm:text-5xl">Summer Youth Web Program <span class="text-amber-400">2026</span></h1>
-    <p id="hero-sub" class="mx-auto mt-3 max-w-xl text-lg text-white/70">Six students. Real websites, built from scratch. Tap anyone below or in the menu — their site opens right here, and you never leave the showcase.</p>
+    <p id="hero-sub" class="mx-auto mt-3 max-w-xl text-lg text-white/70">Over the course of one summer, six students in the City of Carson Summer Youth Program learned the fundamentals of professional web development and each designed, built, and published a personal website from the ground up. Select any student below to view their live site.</p>
   </header>
   <main class="mx-auto max-w-5xl px-6 pb-16"><div id="cards" class="grid gap-4 sm:grid-cols-2"></div></main>
 </div>
@@ -65,7 +65,7 @@ document.getElementById('mobilemenu').innerHTML =
  + STUDENTS.map(function(s,i){
    return s.ready
     ? '<button onclick="showStudent('+i+');closeMenu()" class="block w-full border-t border-white/5 px-6 py-3 text-left font-semibold text-white/80 hover:bg-white/10">'+s.name+'</button>'
-    : '<span class="block w-full border-t border-white/5 px-6 py-3 text-left font-semibold text-white/30">'+s.name+' — coming soon</span>';
+    : '<span class="block w-full border-t border-white/5 px-6 py-3 text-left font-semibold text-white/30">'+s.name+' (coming soon)</span>';
  }).join('');
 document.getElementById('cards').innerHTML = STUDENTS.map(function(s,i){
  var action = s.ready ? 'onclick="showStudent('+i+')"' : '';
